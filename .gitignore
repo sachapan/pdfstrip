@@ -1,0 +1,8 @@
+Include
+Lib
+Scripts
+.env
+*swp
+share
+bin
+lib
