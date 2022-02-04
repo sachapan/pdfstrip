@@ -1,0 +1,1 @@
+# pdfstrip
