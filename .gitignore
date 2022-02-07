@@ -7,3 +7,4 @@ share
 bin
 lib
 *pdf
+!sachapan_github.pdf
