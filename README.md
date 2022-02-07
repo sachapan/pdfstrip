@@ -3,7 +3,7 @@
 
 A little whacked together pdf processor to delete pages using [pyPDF2](https://github.com/mstamy2/PyPDF2).  It creates a new file and leaves the original intact.
 
-Sample run with a two page pdf.  Sample in this repo: [sachapan_github.pdf](https://github.com/sachapan/pdfstrip/blob/main/sachapan_github.pdf).
+Sample run with a two page pdf.  This sample file is in this repo: [sachapan_github.pdf](https://github.com/sachapan/pdfstrip/blob/main/sachapan_github.pdf).
 
     python3 .\pdfstrip.py
     Filename to strip: sachapan_github.pdf
@@ -15,6 +15,7 @@ Sample run with a two page pdf.  Sample in this repo: [sachapan_github.pdf](http
     Processing.....
     Deleting page:  2
     sachapan_github_stripped.pdf strip completed.
+    sachapan_github_stripped.pdf has 1 page(s).
 
 A larger sample file with 99 pages: issue [114 of the MagPi magazine](https://magpi.raspberrypi.com/issues/114/pdf/download).
 
@@ -28,6 +29,6 @@ A larger sample file with 99 pages: issue [114 of the MagPi magazine](https://ma
     Processing.....
     Deleting pages:  [2, 4, 7]
     Strip completed.
-    MagPi114_stripped.pdf has 97 pages.
+    MagPi114_stripped.pdf has 97 page(s).
 
 
