@@ -1,7 +1,7 @@
 ## pdfstrip.py
 
 
-A little whacked together pdf processor to delete pages from a pdf using [pyPDF2](https://github.com/mstamy2/PyPDF2).  It creates a new file and leaves the original intact.
+A little whacked together pdf processor to delete pages using [pyPDF2](https://github.com/mstamy2/PyPDF2).  It creates a new file and leaves the original intact.
 
 Sample run with a two page pdf.  Sample in this repo: [sachapan_github.pdf](https://github.com/sachapan/pdfstrip/blob/main/sachapan_github.pdf).
 
