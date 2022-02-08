@@ -3,7 +3,7 @@
 A little whacked together pdf processor to delete pages using [pyPDF2](https://github.com/mstamy2/PyPDF2).  It creates a new file and leaves the original intact.
 
 *Motivation:* A file that can be read in two page scrolling doesn't line up properly in the pdf viewer. 
-*Solution:* Write a script to strip a page or three and voila! the two page view aligns correctly. 
+*Solution:* Write a script to strip a page or three and [voilà](https://en.wiktionary.org/wiki/voil%C3%A0) the two page view aligns correctly. 
 
 A sample run with a two page pdf.  This sample file is in this repo: [sachapan_github.pdf](https://github.com/sachapan/pdfstrip/blob/main/sachapan_github.pdf).
 
@@ -51,6 +51,5 @@ This one generates a new pdf document by combining files from a list of supplied
                         File name for merged pdf.
     
     python3 .\pdfmerge.py -f 1.pdf, 2.pdf -o merged.pdf
-    Processing: 1.pdf
     Processing: 2.pdf
-    Merge complete in file: merged.pdf
+    Merge complete into file: merged.pdf
