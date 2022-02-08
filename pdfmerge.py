@@ -1,20 +1,19 @@
 from PyPDF2 import PdfFileMerger, PdfFileWriter, PdfFileReader
 import os
-
-merger = PdfFileMerger()
-
-#input1 = open("MagPI114.pdf", "rb")
-# input2 = open("document2.pdf", "rb")
-# input3 = open("document3.pdf", "rb")
-
-# print(type(input1))
-# print("Pages to remove (space separated):")
+import argparse
 
 
 def main():
-    input_files = input("Files to merge (space separated list): ")
-    input_files = list(input_files.split())
-    print("Input files:", input_files)
+    merger = PdfFileMerger()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--files', type=str, nargs='+', required=True,
+                        help='A comma separated list of pdf file names to merge.')
+    parser.add_argument('-o', '--output', type=str, required=True,
+                        help='File name for merged pdf.')
+    args = parser.parse_args()
+    input_files = (args.files)
+    output_file = (args.output)
+    #print("Input files:", input_files)
     for input_file in input_files:
         if not os.path.isfile(input_file):
             raise("File not found.")
@@ -22,59 +21,12 @@ def main():
         else:
             print("Processing:", input_file)
             apdf = open(input_file, "rb")
-            # merger.append(fileobj=apdf)
             merger.append(apdf)
-    output_file = (os.path.splitext(input_file)[0] + "_merged.pdf")
-    print("output_file:", output_file)
+    #print("Output file:", output_file)
     output = open(output_file, "wb")
     merger.write(output)
-    #print("Merged output file is:", output_file)
-    # exit()
-
-    #print("Output file:", input_file.lstrip(' ')[0])
-    # exit()
-    #input_string = input("Pages to remove - space separated:")
-    # pages_to_delete = input_string.split()
-    #pages_to_delete = list(map(int, input_string.split()))
-    # pages_to_delete))
-    #print("Deleting pages:", pages_to_delete)
-# deadpage = int(input())
-# print(deadpage)
-# merger.append(fileobj=input1, pages=(0, (deadpage - 1)))
-# merger.append(fileobj=input1, pages=(deadpage, (deadpage - 1)))
-#output = open(output_file, "wb")
-# merger.write(output)
+    print("Merge complete.")
 
 
-# from PyPDF2 import PdfFileWriter, PdfFileReader
-# pages_to_delete = [3, 4, 5] # page numbering starts from 0
-# pages_to_delete = [1, 3, 6]
-#    infile = PdfFileReader(input_file, 'rb')
-#    output = PdfFileWriter()
-
-#    for i in range(infile.getNumPages()):
-#        if i not in pages_to_delete:
-#            print("keeping page:", i)
-#            p = infile.getPage(i)
-#            output.addPage(p)
-
-#    with open(output_file, 'wb') as f:
-#        output.write(f)
-# strip = [2, 4]
-# for item in strip:
-#    print(int(item) - 2, item)
-#    merger.append(fileobj=input1, pages=(int(item) - 1, item))
-# add the first 3 pages of input1 document to output - aka from 0 to 2
-# merger.append(fileobj=input1, pages=(0, 2))
-
-# insert the first page of input2 into the output beginning after the second page
-# merger.merge(position=2, fileobj=input2, pages=(0, 1))
-# append entire input3 document to the end of the output document
-# merger.append(input3)
-
-
-# Write to an output PDF document
-# output = open("document-output.pdf", "wb")
-# merger.write(output)
 if __name__ == "__main__":
     main()
