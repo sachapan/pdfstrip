@@ -2,8 +2,8 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 import os
 
 
-def separator():
-    print("-----------------------------------------------------------------------")
+def Separator():
+    print("------------------------------------------------------------------")
 
 
 def main():
@@ -14,13 +14,14 @@ def main():
         else:
             print("No such file!")
     infile = PdfFileReader(input_file, 'rb')
-    separator()
+    Separator()
+    # Test for pdf with only a single page.
     if infile.getNumPages() == 1:
         print("If you wish to remove pages from a single page pdf perhaps you would prefer to delete the file.")
         exit()
     else:
         print(input_file, "has", infile.getNumPages(), "pages.")
-    separator()
+    Separator()
     input_string = input(
         "Which pages would you like to remove - space separated list: ")
 
@@ -39,7 +40,7 @@ def main():
         print("Deleting pages:", str(pages_to_delete))
     else:
         print("Deleting page:", int(pages_to_delete[0]))
-    # Need to decrement all pages to delete by one because PyPDF2 counts from zero.
+    # Need to decrement all pages by one because PyPDF2 counts from zero.
     pages_to_delete = list(map(lambda x: x - 1, pages_to_delete))
     output = PdfFileWriter()
     for i in range(infile.getNumPages()):
