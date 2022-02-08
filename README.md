@@ -40,12 +40,17 @@ A larger sample file with 100 pages: issue [114 of the MagPi magazine](https://m
 This one generates a new pdf document by combining files from a list of supplied pdf file names.
 
     python3 .\pdfmerge.py                              
+    python3 .\pdfmerge.py --help                       
     usage: pdfmerge.py [-h] -f FILES [FILES ...] -o OUTPUT
-    pdfmerge.py: error: the following arguments are required: -f/--files, -o/--output
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    -f FILES [FILES ...], --files FILES [FILES ...]
+                        A comma separated list of pdf file names to merge.
+    -o OUTPUT, --output OUTPUT
+                        File name for merged pdf.
     
     python3 .\pdfmerge.py -f 1.pdf, 2.pdf -o merged.pdf
-
-    Input files: ['1.pdf', '2.pdf']
     Processing: 1.pdf
     Processing: 2.pdf
-    Output file: merged.pdf
+    Merge complete in file: merged.pdf
