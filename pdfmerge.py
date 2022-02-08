@@ -13,7 +13,6 @@ def main():
     args = parser.parse_args()
     input_files = (args.files)
     output_file = (args.output)
-    #print("Input files:", input_files)
     for input_file in input_files:
         if not os.path.isfile(input_file):
             raise("File not found.")
@@ -22,10 +21,9 @@ def main():
             print("Processing:", input_file)
             apdf = open(input_file, "rb")
             merger.append(apdf)
-    #print("Output file:", output_file)
     output = open(output_file, "wb")
     merger.write(output)
-    print("Merge complete.")
+    print("Merge complete into file:", output_file)
 
 
 if __name__ == "__main__":
