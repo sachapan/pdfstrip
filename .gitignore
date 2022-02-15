@@ -8,3 +8,4 @@ bin
 lib
 *pdf
 !sachapan_github.pdf
+pyvenv.cfg
