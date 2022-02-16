@@ -51,7 +51,7 @@ A larger sample file with 100 pages: issue [114 of the MagPi magazine](https://m
 ## pdfmerge.py
 
 
-This one generates a new pdf document by combining files from a list of supplied pdf file names.
+This one generates a new pdf by combining files from a list of supplied pdfs.
 
     python3 .\pdfmerge.py                              
     python3 .\pdfmerge.py --help                       
