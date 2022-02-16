@@ -1,11 +1,23 @@
+# The PDF ripping and stripping saga, or how I learned to relax and use python to bend pdfs to my will.
+
+Everyone I know seems to have a love/hate relationship with [the pdf](https://en.wikipedia.org/wiki/PDF) standard.  Graphical tools abound at various price points to create and/or manipulate existing files.  Occasionally I find myself needing to modify such files in new and exciting ways. As I have been doing lately, I pull out python from the ol' geek toolbox.  This is a (growing?) collection of scripts when I find a new pdf itch that needs scratching.
+
+[pdfstrip](##pdfstrip.py)
+
+[pdfmerge](##pdfmerge.py)
+
 ## pdfstrip.py
 
 A little whacked together pdf processor to delete pages using [pyPDF2](https://github.com/mstamy2/PyPDF2).  It creates a new file and leaves the original intact.
 
 *Motivation:* A file that can be read in two page scrolling doesn't line up page spreads properly in the pdf viewer. 
-*Solution:* Write a script to strip a page or three and [voilà](https://en.wiktionary.org/wiki/voil%C3%A0) the two page view aligns correctly. 
 
-A sample run with a two page pdf.  This sample file is in this repo: [sachapan_github.pdf](https://github.com/sachapan/pdfstrip/blob/main/sachapan_github.pdf).
+*Solution:* Write a script to strip a page or three and [voilà](https://en.wiktionary.org/wiki/voil%C3%A0) the two page view aligns correctly. 
+### Example run with a small file
+
+A sample run with a two page pdf.  
+
+This sample file is in this repo: [sachapan_github.pdf](https://github.com/sachapan/pdfstrip/blob/main/sachapan_github.pdf)
 
     python3 .\pdfstrip.py
     Filename to strip: sachapan_github.pdf
@@ -18,6 +30,8 @@ A sample run with a two page pdf.  This sample file is in this repo: [sachapan_g
     Deleting page:  2
     sachapan_github_stripped.pdf strip completed.
     sachapan_github_stripped.pdf has 1 page(s).
+
+### A larger file being processed
 
 A larger sample file with 100 pages: issue [114 of the MagPi magazine](https://magpi.raspberrypi.com/issues/114/pdf/download).
 
