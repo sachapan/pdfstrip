@@ -8,7 +8,7 @@ Everyone I know seems to have a love/hate relationship with [the pdf](https://en
 
 ## pdfstrip.py
 
-A little whacked together pdf processor to delete pages using [pyPDF2](https://github.com/mstamy2/PyPDF2).  It creates a new file and leaves the original intact.
+A little whacked together pdf processor to delete pages using [pypdf](https://pypi.org/project/pypdf/).  It creates a new file and leaves the original intact.
 
 *Motivation:* A file that can be read in two page scrolling doesn't line up page spreads properly in the pdf viewer. 
 
@@ -67,3 +67,12 @@ This one generates a new pdf by combining files from a list of supplied pdfs.
     python3 .\pdfmerge.py -f 1.pdf 2.pdf -o merged.pdf
     Processing: 2.pdf
     Merge complete into file: merged.pdf
+
+
+## pdfly is not my script..
+
+but I recently came across it when I needed to transform a number of png files into a pdf.
+
+    [pdfly](https://pdfly.readthedocs.io/en/latest/)
+
+
