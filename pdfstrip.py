@@ -1,4 +1,5 @@
-from PyPDF2 import PdfFileWriter, PdfFileReader
+#from PyPDF2 import PdfFileWriter, PdfFileReader
+from pypdf import PdfWriter, PdfReader
 import os
 
 
@@ -13,18 +14,18 @@ def main():
             break
         else:
             print("No such file!")
-    infile = PdfFileReader(input_file, 'rb')
+    reader = PdfReader(input_file, 'rb')
     Separator()
     # Test for pdf with only a single page.
-    if infile.getNumPages() == 1:
+    #if reader.getNumPages() == 1:
+    if len(reader.pages) == 1:
         print("If you wish to remove pages from a single page pdf perhaps you would prefer to delete the file.")
         exit()
     else:
-        print(input_file, "has", infile.getNumPages(), "pages.")
+        print(input_file, "has", len(reader.pages), "pages.")
     Separator()
     input_string = input(
         "Which pages would you like to remove - space separated list: ")
-
     output_file = (os.path.splitext(input_file)[0] + "_stripped.pdf")
     print("Output will be sent to: " + output_file)
     print("Processing.....")
@@ -40,18 +41,18 @@ def main():
         print("Deleting pages:", str(pages_to_delete))
     else:
         print("Deleting page:", int(pages_to_delete[0]))
-    # Need to decrement all pages by one because PyPDF2 counts from zero.
+    # Need to decrement all pages by one because pypdf counts from zero.
     pages_to_delete = list(map(lambda x: x - 1, pages_to_delete))
-    output = PdfFileWriter()
-    for i in range(infile.getNumPages()):
+    output = PdfWriter()
+    for i in range(len(reader.pages)):
         if i not in pages_to_delete:
-            p = infile.getPage(i)
-            output.addPage(p)
+            p = reader.pages[i]
+            output.add_page(p)
     with open(output_file, 'wb') as f:
         output.write(f)
     print("Strip completed.")
-    outfile = PdfFileReader(output_file, 'rb')
-    print(output_file, "has", outfile.getNumPages(), "page(s).")
+    outfile = PdfReader(output_file, 'rb')
+    print(output_file, "has", len(outfile.pages), "page(s).")
 
 
 if __name__ == "__main__":
