@@ -60,10 +60,10 @@ This one generates a new pdf by combining files from a list of supplied pdfs.
     optional arguments:
     -h, --help            show this help message and exit
     -f FILES [FILES ...], --files FILES [FILES ...]
-                        A comma separated list of pdf file names to merge.
+                        A space separated list of pdf file names to merge.
     -o OUTPUT, --output OUTPUT
                         File name for merged pdf.
     
-    python3 .\pdfmerge.py -f 1.pdf, 2.pdf -o merged.pdf
+    python3 .\pdfmerge.py -f 1.pdf 2.pdf -o merged.pdf
     Processing: 2.pdf
     Merge complete into file: merged.pdf

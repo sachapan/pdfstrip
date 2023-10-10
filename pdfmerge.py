@@ -1,13 +1,14 @@
-from PyPDF2 import PdfFileMerger, PdfFileWriter, PdfFileReader
+# from PyPDF2 import PdfFileMerger, PdfFileWriter, PdfFileReader
+from pypdf import PdfMerger, PdfWriter, PdfReader
 import os
 import argparse
 
 
 def main():
-    merger = PdfFileMerger()
+    merger = PdfMerger()
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--files', type=str, nargs='+', required=True,
-                        help='A comma separated list of pdf file names to merge.')
+                        help='A space separated list of pdf file names to merge.')
     parser.add_argument('-o', '--output', type=str, required=True,
                         help='File name for merged pdf.')
     args = parser.parse_args()
