@@ -73,6 +73,6 @@ This one generates a new pdf by combining files from a list of supplied pdfs.
 
 but I recently came across it when I needed to transform a number of png files into a pdf.
 
-    [pdfly](https://pdfly.readthedocs.io/en/latest/)
+[pdfly](https://pdfly.readthedocs.io/en/latest/)
 
 
